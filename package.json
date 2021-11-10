@@ -1,6 +1,6 @@
 {
   "name": "react-challenge-project",
-  "homepage": "https://artemkrylov.github.io/testShopProject",
+  "homepage": "https://artemkrylov.github.io/testShopProject/build",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
