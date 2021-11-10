@@ -1,0 +1,277 @@
+body {
+  margin: 0;
+  font-size: 1.2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color:white;
+  padding: 0;
+  margin: 0;
+}
+
+.button {
+  background-color: rgb(33, 179, 147);
+  font-weight: bold;
+  border: .05rem solid black;
+  border-radius: .4rem;
+
+}
+
+.button:hover {
+  background-color: rgb(83, 37, 168);
+  color: rgb(74, 236, 82);
+}
+
+.itemButton{
+  background-color: rgb(33, 179, 147);
+  font-weight: bold;
+  border: .05rem solid black;
+  border-radius: .2rem;
+  margin: .1rem;
+  box-shadow: .1rem .07rem .01rem .01rem black ;
+}
+
+.itemButton:hover{
+  box-shadow: .1rem .07rem .01rem .02rem black ;
+  background-color: rgb(6, 5, 70);
+  color: white;
+}
+
+.changeNumberButton{
+  width: 1rem;
+  height: 1rem;
+  font-size: .6rem;
+  font-weight: bold;
+  vertical-align: center;
+  text-align: center;
+  margin: .3rem;
+  background-color: rgb(6, 5, 70);
+  color: white;
+  border: .01rem solid black;
+}
+
+.changeNumberButton:hover{
+  box-shadow: .005rem .005rem .005rem .05rem white ;
+}
+
+
+
+.navigateButton{
+  width: 60vw;
+  margin: 0 20vw 0 20vw;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  box-shadow: 0.2rem 0.1rem .3rem .05rem rgb(25, 26, 46);
+  border:rgb(6, 5, 70) solid .2rem;
+  border-radius: .5rem;
+  background-color: #314755;
+  background-image: linear-gradient(to right, #314755 0%, #26a0da  51%, #314755  100%);
+  
+}
+
+.navigateButton:hover{
+  background-position: right center; /* change the direction of the change here */
+  color: rgb(4, 243, 4);
+  font-weight: bolder;
+}
+
+.payButton  {
+  background-color: #00DBDE;
+  background-image: linear-gradient(90deg, #00DBDE 0%, #1613be 100%);
+  transition: .2s;
+  box-shadow: 0.2rem 0.1rem .3rem .05rem rgb(25, 26, 46);
+  border:rgb(6, 5, 70) solid .2rem;
+  border-radius: .5rem;
+  color: rgb(36, 10, 77);
+  text-shadow: 0.08rem 0.08rem 0.1rem white;
+  font-weight: bold;
+
+}
+
+.payButton:hover  {
+  background-color: #00DBDE;
+  background-image: linear-gradient(180deg, #00DBDE 0%, #1613be 100%);
+  box-shadow: 0.25rem 0.15rem .3rem .05rem rgb(25, 26, 46);
+  color: white;
+  text-shadow: 0.08rem 0.08rem 0.1rem rgb(36, 10, 77);
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-height: 2vh;
+  background-color: rgb(6, 5, 70);
+  background: linear-gradient(180deg, rgba(2,0,36,1) 15%, rgba(9,9,121,1) 70%, rgba(0,89,255,1) 100%);
+  margin: 0;
+  padding: 1rem; 
+  color: white;
+  border-bottom: .1rem solid black;
+  border-radius: 0 0 1rem 1rem;
+  text-align: center;
+}
+
+.basketImgAndNumber{
+  display: flex;
+  flex-direction: row ;
+}
+
+.basketImage {
+  width: 2.5rem;
+  height: 2rem;
+  border: .1rem rgb(6, 5, 70) solid;
+  background-color: rgba(255,255,255,0.5);
+}
+
+.basketImage:hover {
+  border: .1rem red solid;
+  background-color: rgba(3, 211, 20, 0.979);
+}
+
+.numberOfProductsInBasket {
+  width: 1rem;
+  height: 1rem;
+  background-color: white;
+  font-size: .7rem;
+  font-weight: bolder;
+  color: red;
+  border: .1rem rgb(6, 5, 70) solid;
+}
+
+.footer {
+  min-height: 1vh;
+  background-color: rgb(6, 5, 70);
+  background: linear-gradient(0deg, rgba(2,0,36,1) 15%, rgba(9,9,121,1) 70%, rgba(0,89,255,1) 100%);
+  margin: 1vh 0 0;
+  padding: .1rem; 
+  color: white;
+  border-top: .1rem solid black;
+  border-radius: 1rem 1rem 0 0;
+  text-align: center;
+  font-size: medium;
+}
+
+.productListStyles{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; 
+  min-height: 44vh;
+  margin: .1rem 1rem;
+  padding: 2rem;
+  border: .2vw solid black;
+  border-radius: .5rem;
+  background-color: #FBAB7E;
+  background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+  box-shadow: 0.2rem 0.1rem .3rem .05rem rgb(25, 26, 46);
+}
+
+
+
+.basketPage{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  
+}
+
+.basketComponent {
+  margin: 2rem;
+  padding: 2rem;
+  border: .1rem black dotted;
+  border-radius: .5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #74EBD5;
+  background-image: linear-gradient(90deg, #74EBD5 0%, #9FACE6 100%);
+  box-shadow: 0.2rem 0.1rem .3rem .05rem rgb(25, 26, 46);
+
+
+}
+
+.emptyBasket{
+  display: flex;
+  justify-content: center;
+}
+
+.basketUl{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.basketLi{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#productBasketId{
+  text-align: center;
+  width: 30vw;
+}
+
+#productBasketValue{
+  text-align: center;
+  width: 8vw;
+  color: red;
+  font-weight: bold;
+}
+
+#productBasketNumber{
+  text-align: center;
+  width: 8vw;
+}
+
+#productBasketDiscount{
+  text-align: center;
+  width: 8vw;
+}
+
+#totalPrice{
+  color: red;
+  font-weight: bold;
+}
+
+#expelFromBasket{
+  height: 1.5rem;
+  text-align: center;
+  background-color: red;
+  border: black .1rem solid;
+}
+
+#expelFromBasket:hover{
+  color: white;
+  border: white .1rem solid;
+
+}
+
+.summeryBasket{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.plusMinusNumberBar{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
