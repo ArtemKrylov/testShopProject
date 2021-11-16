@@ -28,7 +28,7 @@ function ProductItem({product, index, changeCheckboxFunction, incrementNumber, d
 
             {/* Кнопка добавления продукта в корзину */}
             <button type = 'button' className = 'button' className = 'itemButton' onClick = {() => changeCheckboxFunction(product.id)}>
-                {!product.isAddedToBasket ? 'Добавить в корзину' : 'В корзине'}
+                {!product.isAddedToBasket ? 'Добавить в корзину' : 'Удалить из корзины'}
             </button>
 
             {/* Регулировка количества товаров */}

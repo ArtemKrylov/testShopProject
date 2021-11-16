@@ -1,11 +1,20 @@
 body {
   margin: 0;
   font-size: 1.2rem;
+ 
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#root{
+  min-height: 100vh; 
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 code {
@@ -72,7 +81,7 @@ code {
 
 .navigateButton{
   width: 60vw;
-  margin: 0 20vw 0 20vw;
+  margin: 0;
   text-align: center;
   text-transform: uppercase;
   transition: 0.5s;
@@ -93,6 +102,7 @@ code {
 }
 
 .payButton  {
+  margin-left: 10vw;
   background-color: #00DBDE;
   background-image: linear-gradient(90deg, #00DBDE 0%, #1613be 100%);
   transition: .2s;
@@ -118,6 +128,7 @@ code {
   flex-direction: row;
   justify-content: space-between;
   min-height: 2vh;
+  max-height: 5vh;
   background-color: rgb(6, 5, 70);
   background: linear-gradient(180deg, rgba(2,0,36,1) 15%, rgba(9,9,121,1) 70%, rgba(0,89,255,1) 100%);
   margin: 0;
@@ -126,6 +137,27 @@ code {
   border-bottom: .1rem solid black;
   border-radius: 0 0 1rem 1rem;
   text-align: center;
+}
+
+#navLinksBar{
+  display: flex;
+  flex-direction: row;
+  
+}
+
+.navLink{
+  margin-left: 1rem;
+  color: white;
+  text-decoration: none;
+}
+
+.navLink:hover{
+  color: red;
+  text-shadow: .01rem .01rem .1rem red;
+}
+
+.active{
+  text-decoration: underline;
 }
 
 .basketImgAndNumber{
@@ -159,7 +191,7 @@ code {
   min-height: 1vh;
   background-color: rgb(6, 5, 70);
   background: linear-gradient(0deg, rgba(2,0,36,1) 15%, rgba(9,9,121,1) 70%, rgba(0,89,255,1) 100%);
-  margin: 1vh 0 0;
+  margin: 0;
   padding: .1rem; 
   color: white;
   border-top: .1rem solid black;
@@ -168,12 +200,19 @@ code {
   font-size: medium;
 }
 
+#productListComponent{
+  display: flex;
+  flex-direction: column;
+  padding:.5rem 1rem;
+ 
+  
+}
+
 .productListStyles{
   display: flex;
   flex-direction: row;
   justify-content: space-between; 
-  min-height: 44vh;
-  margin: .1rem 1rem;
+  flex-wrap: wrap;
   padding: 2rem;
   border: .2vw solid black;
   border-radius: .5rem;
@@ -182,7 +221,11 @@ code {
   box-shadow: 0.2rem 0.1rem .3rem .05rem rgb(25, 26, 46);
 }
 
-
+#buttonToBasketFromMain{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .basketPage{
   display: flex;
@@ -194,6 +237,8 @@ code {
 
 .basketComponent {
   margin: 2rem;
+  align-items: center;
+  height: 50vh;
   padding: 2rem;
   border: .1rem black dotted;
   border-radius: .5rem;
@@ -216,6 +261,7 @@ code {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  padding: 0;
 }
 
 .basketLi{
@@ -224,26 +270,34 @@ code {
   justify-content: space-around;
 }
 
-#productBasketId{
+.productBasketId{
   text-align: center;
-  width: 30vw;
+  width: 20vw;
 }
 
-#productBasketValue{
+.productBasketValue{
   text-align: center;
   width: 8vw;
   color: red;
   font-weight: bold;
 }
 
-#productBasketNumber{
+.productBasketNumber{
   text-align: center;
   width: 8vw;
 }
 
-#productBasketDiscount{
+.productBasketDiscount{
   text-align: center;
-  width: 8vw;
+  color:rgb(28, 107, 20);
+  width: 16vw;
+}
+
+.productTotalPrice{
+  color: red;
+  font-weight: bold;
+  width: 10vw;
+  text-align: center;
 }
 
 #totalPrice{

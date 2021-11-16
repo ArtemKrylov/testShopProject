@@ -1,11 +1,15 @@
 import React from 'react'
 import ProductItem from './ProductItem'
 import PropTypes from 'prop-types'
+import {useNavigate} from 'react-router-dom'
 
 //Компонент - общее окно списка товаров
 function ProductList(props){
+    let navigate = useNavigate();
+
     return (
-        <ul className = 'productListStyles'>
+        <div id="productListComponent">
+            <ul className = 'productListStyles'>
             {props.products.map((product, index) => {
                 return (
                     <ProductItem 
@@ -18,7 +22,12 @@ function ProductList(props){
                     />
                 )
             })}
-        </ul>
+            </ul>
+            <div id = 'buttonToBasketFromMain'>
+                <button className = 'navigateButton' onClick = {() => navigate('/testShopProject/basket')} >Перейти в корзину</button>
+            </div> 
+        </div>
+        
     )
 }
 

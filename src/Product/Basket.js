@@ -1,18 +1,11 @@
 import React from "react";
 import PlusMinusNumberBar from "./PlusMinusNumberBar";
+import {useNavigate} from "react-router-dom"
 
 //Компонент корзина с продуктами, общей ценой и оплатой
 export default function Basket({products, incrementNumber, decrementNumber, isBasketEmpty, setProducts, productNamesInBasket, setProductNamesInBasket}){
     let totalPrice = 0; //Общая цена товаров в корзине
-    class BoughtProductConstructorFunc {  //класс конструкции объекта в корзине для добавления в массив
-        constructor(name, value, discount, numberInBasket){
-            this.name = name;
-            this.value = value;
-            this.discount = discount;
-            this.numberInBasket = numberInBasket;
-        }
-        
-    }
+    let navigate = useNavigate();
 
     //Подсчет цену продукта, учитывая количество в корзину и скидку за количество товара
     function calcPrice(product){
@@ -38,7 +31,10 @@ export default function Basket({products, incrementNumber, decrementNumber, isBa
 
     //рендеринг компонента в зависимости есть ли продукты в корзине или она пуста
     if(isBasketEmpty){
-        return <div className = 'basketComponent'><div className = 'emptyBasket'>Корзина пуста :(</div> </div>
+        return <div className = 'basketComponent'>
+            <div className = 'emptyBasket'>Корзина пуста :(</div> 
+            <button className = 'navigateButton' onClick = {() => navigate('/testShopProject/')} >Перейти на главную страницу</button> 
+        </div>
     } else{
         return (
             <div className = 'basketComponent'>
@@ -50,16 +46,22 @@ export default function Basket({products, incrementNumber, decrementNumber, isBa
                             totalPrice += calcPrice(product);
                             return(
                                 <li className = "basketLi">
-                                    <div id = "productBasketId">{product.name}</div>
-                                    <div id = "productBasketValue">{`${product.value} $`}</div>
-                                    <div id = "productBasketNumber">{`№ ${product.numberInBasket}`}</div>
-                                    <div id = "productBasketDiscount">{`% ${product.discount}`}</div>
+                                    <div className = "productBasketId">{product.name}</div>
+                                    <div className = "productBasketValue">{`${product.value} $`}</div>
+                                    <div className = "productBasketNumber">{`№ ${product.numberInBasket}`}</div>
+                                    <div className = "productBasketDiscount">
+                                        {`cкидка ${product.discount * Math.floor(product.numberInBasket/product.discountForNumberBought)} $`}
+                                    </div>
                                     <PlusMinusNumberBar 
                                         boughtProduct = {product} 
                                         decrementNumber = {decrementNumber} 
                                         incrementNumber = {incrementNumber}
                                         
                                     />
+                                    <div className = 'productTotalPrice'>
+                                        {`${product.value * product.numberInBasket - product.discount * 
+                                            Math.floor(product.numberInBasket/product.discountForNumberBought)} $`}
+                                    </div>
                                     <button onClick = {() => expelFromBusket(product)} id = 'expelFromBasket'>x</button>
                                 </li>
                             )
@@ -74,6 +76,7 @@ export default function Basket({products, incrementNumber, decrementNumber, isBa
                     </div>
                     <button className = 'payButton'>Перейти к оплате</button>
                 </div>
+                <button className = 'navigateButton' onClick = {() => navigate('/testShopProject/')} >Перейти на главную страницу</button> 
             </div>
             
         )
