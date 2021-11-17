@@ -14,13 +14,10 @@ export default function App() {
     {id: 3, name: 'Папайа', value: 10, isAddedToBasket: false,  numberInBasket: 0, discount: 5, discountForNumberBought: 3, imgSource: 'https://yesfrukt.com/storage/source/0f494eef36046ddb3223867e02350e99/content/1/xyMiQSxRPe4pojDgSx4f-zxofYyQaUe7f.jpeg.pagespeed.ic.GShY-v5PZe.jpg'}
   ]);
 
-  //let [isBusketImgClicked, setGoToBasket] = React.useState(false);
   let [productNamesInBasket, setProductNamesInBasket] = React.useState(0); //количество наименований товаров в корзине
-  let [isBasketEmpty, setBasketState] = React.useState(true);   
+  let [isBasketEmpty, setBasketState] = React.useState(true);   //индикатор пустоты корзины
 
-  
   return (
-    
       <BrowserRouter>
         <TopBar productNamesInBasket = {productNamesInBasket}/>
         <Routes>
@@ -53,43 +50,6 @@ export default function App() {
       </BrowserRouter>
     
   );
-
-  /*
-  //Рендеринг страницы в 2 вариантах - основная страница товаров и страница корзины
-  if(isBusketImgClicked){
-    return (
-      <div className = "basketPage">
-        <TopBar goToBasket = {goToBasket} productNamesInBasket = {productNamesInBasket}/>
-        <Basket 
-          products = {products}   
-          className = 'basketComponent' 
-          incrementNumber = {incrementNumber} 
-          decrementNumber = {decrementNumber}
-          isBasketEmpty = {isBasketEmpty}
-          setProducts = {setProducts}
-          productNamesInBasket = {productNamesInBasket}
-          setProductNamesInBasket = {setProductNamesInBasket}
-        />
-        <button className = 'navigateButton' onClick = {returnFromBasketToMainPage}>Перейти на главную страницу</button>
-        <BottomBar/>
-      </div>
-    )
-  } else {
-    return (
-      <div className="wrapper">
-          <TopBar goToBasket = {goToBasket} productNamesInBasket = {productNamesInBasket}/>
-          <ProductList 
-            products = {products} 
-            basketItem = {addToBasket} 
-            incrementProduct = {incrementNumber} 
-            decrementProduct = {decrementNumber}/>
-          <div>
-            <button className = 'navigateButton' onClick = {goToBasket}>Перейти в корзину</button>
-          </div>
-          <BottomBar/>
-      </div>
-    )
-  }*/
 
   //Функция добавить товар в корзину - количество товаров - 1
   function addToBasket(id){
@@ -141,23 +101,5 @@ export default function App() {
       })
     )
   }
-
-  /*
-  //Функция для перерендеринга страницы на страницу корзины при клике на изображение корзины
-  function goToBasket(){
-    setGoToBasket(
-      isBusketImgClicked = true
-    )
-  }
-
-  //Функция для перерендеринга страницы на основную страницу при возврате из страницы корзины 
-  function returnFromBasketToMainPage(){
-    setGoToBasket(
-      isBusketImgClicked = false
-    )
-  }*/
-
-
-  
   
 }
